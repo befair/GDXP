@@ -1,5 +1,8 @@
 Changelog
 
+0.2.1
+    aggiunti gli elementi logo (facoltativo) e lastUpdate.
+    Aggiunto commento sulle buone pratiche di composizione del contenuto dell'attributo applicationSignature.
 0.2
 	gran parte degli attributi sono stati mutati in elementi
 	soppressi i campi packagePrice e discounts
