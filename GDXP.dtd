@@ -8,7 +8,7 @@
     Attributi:
         - protocolVersion: versione del protocollo
         - creationDate: timestamp di creazione del file con precisione fino al secondo con formato YYYYMMDDHHmmss
-        - applicationSignature: firma dell'applicazione che ha creato il file
+        - applicationSignature: firma dell'applicazione che ha creato il file. Buona pratica sarebbe comporla in questo modo: <sigla univoca del software>@<dominio di installazione>
     Figli: supplier
 -->
 <!ELEMENT gdxp supplier*>
@@ -24,7 +24,7 @@
         
         Nota bene: taxCode e vatNumber sono entrambi facoltativi, ma almeno uno dovrebbe sempre essere valorizzato
     -->
-    <!ELEMENT supplier (taxCode?, vatNumber?, name, address, contacts, note?, products, orders, extraFields?)>
+    <!ELEMENT supplier (taxCode?, vatNumber?, name, address, contacts, logo?, lastUpdate, note?, products, orders, extraFields?)>
         <!--
             Tag: taxCode
             Descrizione: Codice fiscale
@@ -175,6 +175,17 @@
                     Descrizione: indirizzo di posta elettronica
                 -->
                 <!ELEMENT emailAddress (#CDATA)>
+        <!--
+            Tag: logo
+            Descrizione: url del logo del fornitore 
+        -->
+        <!ELEMENT logo (#CDATA)>
+
+        <!--
+            Tag: lastUpdate
+            Descrizione: Unix timestamp relativo all'ultima modifica dei dati del fornitore o del suo listino
+        -->
+        <!ELEMENT lastUpdate (#CDATA)>
 
         <!--
             Tag: note
